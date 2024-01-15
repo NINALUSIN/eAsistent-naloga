@@ -5,7 +5,7 @@
 
 
 @section('content')
-<div class="center-align">
+    <div class="center-align">
         <h4>Prijava</h4>
 
         <div class="row">
@@ -50,7 +50,30 @@
                 </div>
             </div>
             <div class="col m3 s0"></div>
-    </div>
+        </div>
 
+        <div class="row">
+            <div class="col m3 s0"></div>
+            <div class="col m6 s12 ">
+                <div class="card-panel custom-color-main rounded-corners">
+                    <span class="white-text">
+                        <div class="row">
+                            Še nimate uporabniškega računa?
+                        </div>
+                        <div class="row">
+                            <a href="/register" class="btn waves-effect waves-light white custom-text-color-main">
+                                Registrirajte se
+                                <i class="material-icons right">send</i>
+                            </a>
+
+                        </div>
+
+                        <!-- END registration form -->
+                    </span>
+                </div>
+            </div>
+            <div class="col m3 s0"></div>
+        </div>
+    </div>
 
 @endsection

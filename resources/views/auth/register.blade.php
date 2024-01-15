@@ -72,5 +72,6 @@
                 </div>
             </div>
             <div class="col m3 s0"></div>
+        </div>
     </div>
 @endsection
