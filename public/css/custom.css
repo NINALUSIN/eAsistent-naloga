@@ -1,4 +1,25 @@
 
-.navigation-custom{
+.custom-color-main{
     background-color: #007bac;
+}
+.custom-text-color-main{
+    color: #007bac;
+}
+
+.rounded-corners{
+    border-radius : 15px;
+}
+
+.custom-input{
+    margin-top: 10px !important;
+}
+
+.custom-label{
+    font-weight: bold;
+    color: white !important;
+    font-size: 20px !important;
+}
+
+.bold-text{
+    font-weight: bold;
 }

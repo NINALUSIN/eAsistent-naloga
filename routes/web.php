@@ -16,14 +16,26 @@ $controller_path = 'App\Http\Controllers';
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
-Route::get('/test-page',$controller_path . '\TestPageController@index');
-Route::get('/shopping-list',$controller_path . '\ShoppingListController@index');
+Route::get('/test-page',$controller_path . '\TestPageController@index')->name('test-page');
+Route::get('/shopping-list',$controller_path . '\ShoppingListController@index')->name('shopping-list');
 
 //Authentication
-Route::get('/register', $controller_path . '\LoginRegisterController@register')->name('register');
-Route::get('/login', $controller_path . '\LoginRegisterController@login')->name('login');
+//Registration and login forms
+Route::get('/register', $controller_path . '\Auth\LoginRegisterController@register')->name('register');
+Route::get('/login', $controller_path . '\Auth\LoginRegisterController@login')->name('login');
+
+//Login
+Route::post('/authenticate', $controller_path . '\Auth\LoginRegisterController@authenticate')->name('authenticate');
+
+//Logout
+Route::match(['get', 'post'], '/logout', $controller_path . '\Auth\LoginRegisterController@logout')->name('logout');
+
+//Save registration
+Route::post('/register-store', $controller_path . '\Auth\LoginRegisterController@registerStore')->name('register-store');
+
+
 
 /*
 Route::controller(LoginRegisterController::class)->group(function() {

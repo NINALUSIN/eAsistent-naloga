@@ -34,4 +34,18 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Test prijave uporabnika</span>
+                        <p class="mb-0">Status prijave uporabnika: <span class="fw-semibold"> {{ $pageConfigs['logged_in'] ? "Uporabnik je prijavljen." : "Uporabnik ni prijavljen."}}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 @endsection

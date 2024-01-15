@@ -17,16 +17,26 @@
     </head>
     <body>
         @section('navigation')
-            <nav class="navigation-custom" role="navigation">
+            <nav class="custom-color-main" role="navigation">
                 <div class="container">
                     <ul class="left ">
                         <li><a href="/">DOMOV</a></li>
                         <li><a href="/shopping-list">Nakupovalni listek</a></li>
                         <li><a href="/test-page">Testna stran</a></li>
                     </ul>
-                    <ul class="right ">
-                        <li><a href="/login">PRIJAVA</a></li>
-                    </ul>
+
+                    @guest
+                        <ul class="right ">
+                            <li><a class="bold-text" href="/login">PRIJAVA</a></li>
+                        </ul>
+                    @else
+                        <ul class="right ">
+                            <li>Prijavljen/a kot: {{ Auth::user()->email }}</li>
+                            <li><a class="bold-text" href="/logout">ODJAVA</a></li>
+                        </ul>
+                    @endguest
+
+
                 </div>
             </nav>
         @show
