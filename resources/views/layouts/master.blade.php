@@ -14,6 +14,8 @@
         <script src="{{asset('js/materialize.min.js')}}"></script>
 
         <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+
+        @vite('resources/js/app.js')
     </head>
     <body>
         @section('navigation')
