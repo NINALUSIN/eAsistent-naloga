@@ -1,11 +1,13 @@
 @extends('layouts.master')
 
-@section('title', 'Testna stran')
+@section('title', 'Nakupovalni listek')
 
 
 
 @section('content')
-    <h4>Nakupovalni listek</h4>
 
+    <div id="app">
+        <shopping-list-component></shopping-list-component>
+    </div>
 
 @endsection

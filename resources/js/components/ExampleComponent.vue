@@ -1,13 +1,10 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
+   <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Example Component</span>
+                        <p class="mb-0">I'm an example component.</p>
                 </div>
             </div>
         </div>
@@ -17,7 +14,7 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component ExampleComponent mounted.')
         }
     }
 </script>

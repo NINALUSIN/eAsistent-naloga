@@ -19,7 +19,7 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/test-page',$controller_path . '\TestPageController@index')->name('test-page');
-Route::get('/shopping-list',$controller_path . '\ShoppingListController@index')->name('shopping-list');
+Route::get('/shopping-list',$controller_path . '\ShoppingListController@show_index')->name('shopping-list');
 
 //Authentication
 //Registration and login forms

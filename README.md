@@ -1,66 +1,67 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# eAsistent - Strokovna Naloga 
+**Avtor:** Nina Lušin
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Opis naloge
+**Naslov**: Kot član družine imam nakupovalni listek, ki ga polnijo vsi člani družine in s katerim lahko grem v trgovino.
 
-## About Laravel
+**Opis**:
+- Potrebujem aplikacijo "nakupovalni listek", kjer lahko različni uporabniki dodajajo, urejajo in brišejo predmete, ki jih bo moral nekdo kasneje iskati v trgovino.
+- Tisti, ki gre v trgovino, mora imeti možnost odkljukati predmete, ki jih je nabavil, kot bi prečrtal na nakupovalnem listku.
+- Prva verzija ima samo "en spisek", ki ga vsi urejajo. Ne omogoča več nakupovalnih listkov.
+- Naj bo uporabniška izkušnja navdušila uporabnika.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Kazalniki/QA**:
+* Dva različna uporabnika lahko vpišeta predmet na isti listek.
+* Vsak uporabnik vidi vse vpisano in stanje vpisanega.
+* En uporabnik pobriše predmet drugega uporabnika. Posledica se vidi pri drugem uporabniku.
+* En uporabnik odkljuka predmet kot "kupljen". Posledica se vidi pri drugem uporabniku.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Navodila za namestitev projekta
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+ 1. Najprej kloniramo repozitorij na naš računalnik.
+ 2. Nato odpremo "command prompt" z ukazom "cmd" ali preko menija. 
+ ![enter image description here](https://i.imgur.com/9f2dv9b.png)
 
-## Learning Laravel
+ 3. V konzoli se pomaknemo na lokacijo projekta na računalniku:
+![ ](https://i.imgur.com/FCp87kH.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+ 4. Nato namestimo odvisnosti z ukazom “composer install”.
+![ ](https://i.imgur.com/qSNMtRi.png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+ 5. Nato namestimo NPM pakete z ukazom “npm install”.
+![ ](https://i.imgur.com/q1GlqrU.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+ 6. Nato naredimo MySQL bazo:
+	 - **Ime baze:** shopping_list
+	 - **Collation:** utf16_slovenian_ci
+ 7.  Nato naredimo na bazi novega uporabnika, ki mu dodelimo vse pravice:  
+	    **Username:** laravel  
+	    **Password:** eAsistent123*
 
-## Laravel Sponsors
+8.  Nato v konzoli skopiramo “.env.example” datoteko v “.env” z ukazom “copy .env.example .env”.
+![ ](https://i.imgur.com/WYmFC8G.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+9. V .env datoteki spremenimo nastavitve za podatkovno bazo.
+**DB_CONNECTION**=mysql
+**DB_HOST**=127.0.0.1
+**DB_PORT**=3306
+**DB_DATABASE**=shopping_list
+**DB_USERNAME**=laravel
+**DB_PASSWORD**=eAsistent123*
 
-### Premium Partners
+10. Nato v konzoli zaženemo migracijo podatkovne baze z ukazom “php artisan migrate”.
+![ ](https://i.imgur.com/veFw3ee.png)
+ 
+ 11. Nato v konzoli generiramo api ključ z “php artisan key:generate”.
+![ ](https://i.imgur.com/bWJ8YJd.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+ 13. Nato v konzoli zaženemo: “npm run build”.
+![ ](https://i.imgur.com/C0rvifK.png)
 
-## Contributing
+ 14. Nato v konzoli zaženemo artisan server.
+ “php artisan serve --host=localhost --port=8000”
+![ ](https://i.imgur.com/zr80zmp.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+14. V brskalniku se pomaknemo na URL: http://localhost:8000/
+ ![ ](https://i.imgur.com/qzk5byc.png)
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

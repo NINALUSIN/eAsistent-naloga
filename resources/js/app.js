@@ -17,7 +17,17 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+import ShoppingListComponent from './components/ShoppingListComponent.vue';
+import ShoppingListAddItem from './components/ShoppingListAddItem.vue';
+import ShoppingListSingleItem from './components/ShoppingListSingleItem.vue';
+import ShoppingListAllItems from './components/ShoppingListAllItems.vue';
+
+app
+.component('example-component', ExampleComponent)
+.component('shopping-list-component', ShoppingListComponent)
+.component('shopping-list-add-item', ShoppingListAddItem)
+.component('shopping-list-single-item', ShoppingListSingleItem)
+.component('shopping-list-all-items', ShoppingListAllItems);
 
 /**
  * The following block of code may be used to automatically register your

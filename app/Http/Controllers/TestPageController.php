@@ -14,14 +14,7 @@ class TestPageController extends Controller
     {
         $connection_test = connection_test::all();
 
-        $loggedIn = false;
-
-        if(Auth::check())
-        {
-            $loggedIn = true;
-        }
-
-        $pageConfigs = ['variableTest' => 'Test spremenljivk uspešen!', 'connection_test'=>$connection_test, 'logged_in'=> $loggedIn];
+        $pageConfigs = ['variableTest' => 'Test spremenljivk uspešen!', 'connection_test'=>$connection_test, 'logged_in'=> Auth::check()];
 
 
         return view('test-page', ['pageConfigs' => $pageConfigs]);

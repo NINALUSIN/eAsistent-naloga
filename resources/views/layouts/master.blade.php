@@ -14,8 +14,13 @@
         <script src="{{asset('js/materialize.min.js')}}"></script>
 
         <link rel="stylesheet" href="{{asset('css/custom.css')}}">
-
+        @auth
+            <meta name="user-id" content="{{ Auth::user()->id }}">
+        @else
+            <meta name="user-id" content="-1">
+        @endauth
         @vite('resources/js/app.js')
+
     </head>
     <body>
         @section('navigation')

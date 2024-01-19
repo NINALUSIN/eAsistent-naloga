@@ -23,3 +23,32 @@
 .bold-text{
     font-weight: bold;
 }
+
+.shopping-list-action-row{
+    margin-bottom: 0px;
+    font-size: 10px;
+}
+
+.shopping-list-action{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.shopping-list-card-content{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.shopping-list-card-content-row{
+    margin-bottom: 0px !important;
+}
+
+.shopping_list_done{
+    text-decoration: line-through;
+}
+
+.shopping-list-item-text {
+    word-break: break-all;
+    word-break: break-word;
+    display: block;
+}
